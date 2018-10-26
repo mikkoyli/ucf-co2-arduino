@@ -15,10 +15,15 @@
   Written by Dean Miller for Adafruit Industries.
   BSD license, all text above must be included in any redistribution
  ***************************************************************************/
-
+ 
+#include "MQ135.h"
 #include "Adafruit_CCS811.h"
-
+MQ135 gasSensor = MQ135(A6); 
 Adafruit_CCS811 ccs;
+
+int val; 
+int sensorPin = A0; 
+int sensorValue = 0; 
 
 void setup() {
   Serial.begin(9600);
@@ -37,20 +42,24 @@ void setup() {
 }
 
 void loop() {
+  val = analogRead(A0); 
   if(ccs.available()){
     float temp = ccs.calculateTemperature();
     if(!ccs.readData()){
-      Serial.print("CO2: ");
+      Serial.print("CCS811");
+      Serial.print(" ");
       Serial.print(ccs.geteCO2());
-      Serial.print("ppm, TVOC: ");
-      Serial.print(ccs.getTVOC());
-      Serial.print("ppb   Temp:");
-      Serial.println(temp);
     }
     else{
       Serial.println("ERROR!");
       while(1);
     }
   }
-  delay(500);
+  Serial.print(" ");
+  
+  Serial.print("MQ135");
+  Serial.print(" ");
+  float ppm = gasSensor.getPPM(); 
+  Serial.println (ppm); 
+  delay(1000);
 }
