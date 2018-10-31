@@ -49,17 +49,26 @@ void loop() {
       Serial.print("CCS811");
       Serial.print(" ");
       Serial.print(ccs.geteCO2());
+      Serial.print(" ");
+      Serial.print("Temp ");
+      Serial.print(temp);
+      Serial.print(" ");
+      Serial.print("MQ135");
+      Serial.print(" ");
+      float ppm = gasSensor.getPPM(); 
+      Serial.print (ppm);
+      Serial.print(" ");
+      Serial.print("rzero");
+      Serial.print(" ");
+      float rzero = gasSensor.getRZero();
+      Serial.print(rzero);
+      Serial.println("");
     }
     else{
       Serial.println("ERROR!");
       while(1);
     }
   }
-  Serial.print(" ");
   
-  Serial.print("MQ135");
-  Serial.print(" ");
-  float ppm = gasSensor.getPPM(); 
-  Serial.println (ppm); 
   delay(1000);
 }
