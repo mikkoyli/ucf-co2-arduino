@@ -38,7 +38,11 @@ void loop() {
 
     Serial.print("MQ135");
     Serial.print(" ");
-    Serial.println(ppm); 
+    Serial.print(ppm); 
+    Serial.print(" ");
+    Serial.print("rzero");
+    Serial.print(" ");
+    Serial.println(rzero); 
     
     
 
