@@ -50,9 +50,6 @@ void loop() {
       Serial.print(" ");
       Serial.print(ccs.geteCO2());
       Serial.print(" ");
-      Serial.print("Temp ");
-      Serial.print(temp);
-      Serial.print(" ");
       Serial.print("MQ135");
       Serial.print(" ");
       float ppm = gasSensor.getPPM(); 
