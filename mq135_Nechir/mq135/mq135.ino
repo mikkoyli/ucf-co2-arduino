@@ -33,14 +33,13 @@ void loop() {
     
     Serial.print("CCS811");
     Serial.print(" ");
-  
     Serial.print(mySensor.getCO2());
-      
     Serial.print(" ");
-    
+
     Serial.print("MQ135");
     Serial.print(" ");
-    Serial.println (ppm); 
+    Serial.println(ppm); 
+    
     
 
   }
