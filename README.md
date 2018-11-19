@@ -12,3 +12,6 @@ Library: https://github.com/adafruit/Adafruit_CCS811
 MQ-135:
 https://www.olimex.com/Products/Components/Sensors/SNS-MQ135/resources/SNS-MQ135.pdf
 Library: https://hackaday.io/project/3475-sniffing-trinket/log/12363-mq135-arduino-library
+
+# survey results
+https://docs.google.com/spreadsheets/d/1GHTTFOI9bnqgqFjTlcut9ttd_TrHP8aObqQRhkQynUk/edit?usp=sharing
